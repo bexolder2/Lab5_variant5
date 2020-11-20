@@ -1,0 +1,32 @@
+﻿<Window x:Class="Lab5_v5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab5_v5"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Height="450" Width="800">
+        <DataGrid x:Name="data" AutoGenerateColumns="False" Margin="0,0,386,40">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="First name" Binding="{Binding Path=FirstName}" />
+                <DataGridTextColumn Header="Last name" Binding="{Binding Path=LastName}" />
+                <DataGridTextColumn Header="Salary" Binding="{Binding Path=Salary}" />
+                <DataGridTextColumn Header="Unit name" Binding="{Binding Path=unit.Name}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Label Content="Выберите отображаемый отдел" Margin="577,25,32,395"></Label>
+        <ComboBox Margin="577,60,54,365" x:Name="cb_unit">
+        </ComboBox>
+        <Button Content="Применить фильтр" Margin="577,104,54,310"
+                Click="Filter_Click"></Button>
+        <Button Content="Сбросить фильтр" Margin="577,145,54,269"
+                Click="OffFilter_Click"></Button>
+        <Button Content="Сериализировать" Margin="577,227,54,187"
+                Click="Serialize_Click"></Button>
+
+        <Button Content="Добавить человека" x:Name="b_person"
+                Margin="577,186,54,228" Click="AddPerson_Click"></Button>
+    </Grid>
+</Window>
